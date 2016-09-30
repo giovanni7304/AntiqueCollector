@@ -13,6 +13,8 @@
 		8678C9841D9EE5F000D55E12 /* AntiqueCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8678C9821D9EE5F000D55E12 /* AntiqueCollector.xcdatamodeld */; };
 		8678C9861D9EE5F000D55E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8678C9851D9EE5F000D55E12 /* Assets.xcassets */; };
 		8678C9891D9EE5F000D55E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8678C9871D9EE5F000D55E12 /* LaunchScreen.storyboard */; };
+		8678C9911D9EEA7B00D55E12 /* Oct Week 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8678C9901D9EEA7B00D55E12 /* Oct Week 4.png */; };
+		8678C9931D9EEC9100D55E12 /* AntiqueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678C9921D9EEC9100D55E12 /* AntiqueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8678C9851D9EE5F000D55E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8678C9881D9EE5F000D55E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8678C98A1D9EE5F000D55E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8678C9901D9EEA7B00D55E12 /* Oct Week 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oct Week 4.png"; sourceTree = "<group>"; };
+		8678C9921D9EEC9100D55E12 /* AntiqueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntiqueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		8678C97A1D9EE5F000D55E12 /* AntiqueCollector */ = {
 			isa = PBXGroup;
 			children = (
+				8678C9901D9EEA7B00D55E12 /* Oct Week 4.png */,
 				8678C97B1D9EE5F000D55E12 /* AppDelegate.swift */,
 				8678C97D1D9EE5F000D55E12 /* ViewController.swift */,
+				8678C9921D9EEC9100D55E12 /* AntiqueViewController.swift */,
 				8678C97F1D9EE5F000D55E12 /* Main.storyboard */,
 				8678C9851D9EE5F000D55E12 /* Assets.xcassets */,
 				8678C9871D9EE5F000D55E12 /* LaunchScreen.storyboard */,
@@ -130,6 +136,7 @@
 				8678C9891D9EE5F000D55E12 /* LaunchScreen.storyboard in Resources */,
 				8678C9861D9EE5F000D55E12 /* Assets.xcassets in Resources */,
 				8678C9811D9EE5F000D55E12 /* Main.storyboard in Resources */,
+				8678C9911D9EEA7B00D55E12 /* Oct Week 4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8678C9931D9EEC9100D55E12 /* AntiqueViewController.swift in Sources */,
 				8678C97E1D9EE5F000D55E12 /* ViewController.swift in Sources */,
 				8678C9841D9EE5F000D55E12 /* AntiqueCollector.xcdatamodeld in Sources */,
 				8678C97C1D9EE5F000D55E12 /* AppDelegate.swift in Sources */,
