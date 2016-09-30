@@ -42,5 +42,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("Error Loading Core Data")
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let antique = antiques[indexPath.row]
+        performSegue(withIdentifier: "antiqueSegue", sender: antique)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! AntiqueViewController
+        nextVC.antique = sender as? Antiques
+        
+    }
 }
 

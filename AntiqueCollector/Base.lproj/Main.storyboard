@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" id="xtd-nk-8iU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pda-3t-ODP">
                             <connections>
-                                <segue destination="yYw-W6-WRs" kind="show" id="1n7-uu-5gz"/>
+                                <segue destination="yYw-W6-WRs" kind="show" identifier="antiqueSegue" id="1n7-uu-5gz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -77,20 +77,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-EL-tn5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbh-Go-JLd">
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <action selector="addTapped:" destination="yYw-W6-WRs" eventType="touchUpInside" id="4Le-mf-1A7"/>
+                                    <action selector="addTapped:" destination="yYw-W6-WRs" eventType="touchUpInside" id="44g-mo-dx6"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iix-46-9XU">
+                                <state key="normal" title="Delete"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0NW-EL-tn5" firstAttribute="top" secondItem="8s0-Ti-1Sf" secondAttribute="bottom" constant="20" id="Suh-iQ-jeh"/>
+                            <constraint firstItem="Pbh-Go-JLd" firstAttribute="centerX" secondItem="S3x-mv-KOY" secondAttribute="centerX" id="9uH-NS-hKE"/>
+                            <constraint firstItem="iix-46-9XU" firstAttribute="centerX" secondItem="S3x-mv-KOY" secondAttribute="centerX" id="Bfc-8P-6FY"/>
+                            <constraint firstItem="Pbh-Go-JLd" firstAttribute="top" secondItem="8s0-Ti-1Sf" secondAttribute="bottom" constant="20" id="bI9-th-Dfu"/>
+                            <constraint firstItem="iix-46-9XU" firstAttribute="top" secondItem="Pbh-Go-JLd" secondAttribute="bottom" constant="20" id="cin-rc-i0N"/>
                             <constraint firstItem="8s0-Ti-1Sf" firstAttribute="centerX" secondItem="S3x-mv-KOY" secondAttribute="centerX" id="gcc-Ap-zqo"/>
                             <constraint firstItem="JbG-Le-ycH" firstAttribute="top" secondItem="bXg-SH-N1A" secondAttribute="bottom" constant="20" id="iUs-FB-ANz"/>
                             <constraint firstItem="JbG-Le-ycH" firstAttribute="centerX" secondItem="S3x-mv-KOY" secondAttribute="centerX" id="ilA-8f-uRr"/>
-                            <constraint firstItem="0NW-EL-tn5" firstAttribute="centerX" secondItem="S3x-mv-KOY" secondAttribute="centerX" id="ilb-BT-w8U"/>
                             <constraint firstItem="8s0-Ti-1Sf" firstAttribute="width" secondItem="JbG-Le-ycH" secondAttribute="width" id="tET-Y0-K25"/>
                             <constraint firstItem="8s0-Ti-1Sf" firstAttribute="top" secondItem="JbG-Le-ycH" secondAttribute="bottom" constant="10" id="wAb-7P-HxZ"/>
                         </constraints>
@@ -110,13 +115,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addupdatebtn" destination="Pbh-Go-JLd" id="uoi-Tb-hnL"/>
                         <outlet property="antiqueImageView" destination="JbG-Le-ycH" id="dwO-AS-KvZ"/>
+                        <outlet property="deleteBtn" destination="iix-46-9XU" id="XjI-cm-qLN"/>
                         <outlet property="titleTextField" destination="8s0-Ti-1Sf" id="CAG-37-iKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyc-HL-LXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="108"/>
+            <point key="canvasLocation" x="1836" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CkN-gC-41j">

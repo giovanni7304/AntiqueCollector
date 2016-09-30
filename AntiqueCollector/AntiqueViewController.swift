@@ -11,10 +11,13 @@ import UIKit
 class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
+    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var addupdatebtn: UIButton!
     @IBOutlet weak var antiqueImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
+    var antique : Antiques? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +25,15 @@ class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
         
+        if antique != nil {
+            antiqueImageView.image = UIImage(data: antique!.image as! Data)
+            titleTextField.text = antique!.title
+            addupdatebtn.setTitle("Update", for: .normal)
+        } else {
+            deleteBtn.isHidden = true
+        }
     }
 
-    
     @IBAction func photosTapped(_ sender: AnyObject) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
@@ -48,7 +57,8 @@ class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, 
         let antique = Antiques(context: context)
         antique.title   = titleTextField.text
         
-        antique.image = UIImageJPEGRepresentation(antiqueImageView.image!, 50.00) as NSData?
+        //antique.image = UIImageJPEGRepresentation(antiqueImageView.image!, 50.00) as NSData?
+        antique.image = UIImagePNGRepresentation(antiqueImageView.image!) as NSData?
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
