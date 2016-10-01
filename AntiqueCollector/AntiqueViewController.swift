@@ -43,25 +43,37 @@ class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, 
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         antiqueImageView.image = image
-        
         imagePicker.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cameraTapped(_ sender: AnyObject) {
         imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func addTapped(_ sender: AnyObject) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let antique = Antiques(context: context)
-        antique.title   = titleTextField.text
-        
-        //antique.image = UIImageJPEGRepresentation(antiqueImageView.image!, 50.00) as NSData?
-        antique.image = UIImagePNGRepresentation(antiqueImageView.image!) as NSData?
+        if antique != nil {
+            antique!.title   = titleTextField.text
+            antique!.image = UIImagePNGRepresentation(antiqueImageView.image!) as NSData?
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let antique = Antiques(context: context)
+            antique.title   = titleTextField.text
+            //antique.image = UIImageJPEGRepresentation(antiqueImageView.image!, 50.00) as NSData?
+            antique.image = UIImagePNGRepresentation(antiqueImageView.image!) as NSData?
+        }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
     
+    @IBAction func deleteTapped(_ sender: AnyObject) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(antique!)
+    
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+    }
 }
