@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var deleteBtn: UIButton!
@@ -32,6 +32,8 @@ class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, 
         } else {
             deleteBtn.isHidden = true
         }
+        
+        self.titleTextField.delegate = self
     }
 
     @IBAction func photosTapped(_ sender: AnyObject) {
@@ -44,6 +46,11 @@ class AntiqueViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         antiqueImageView.image = image
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     @IBAction func cameraTapped(_ sender: AnyObject) {
